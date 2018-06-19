@@ -1,12 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Alunos extends MY_Controller {
+class Alunos extends CI_Controller {
 
     public function view() {
 
         $this->load->model('GetAlunos_Model');
         $arrDados['objDados'] = $this->GetAlunos_Model->getListAlunos();
+        $this->load->view('admin/header');
         $this->load->view('alunos/alunos_exibir', $arrDados);
     }
 
