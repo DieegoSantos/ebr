@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h3 style="margin-top: 50px; margin-bottom: -50px" class="text-center text-uppercase text-white">Ver todos os planos</h3>
+                <h3 style="margin-top: 50px; margin-bottom: -50px" class="text-center text-uppercase text-white"><a  style="color: #FFFFFF" href="<?php echo base_url()?>Inscricoes">Ver todos os planos</a></h3>
             </div>
         </div>
 </section>
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <h3 style="margin-top: 60px; margin-bottom: -50px" class="text-center text-uppercase text-white"><a style="color:#0f3b97" href="#"> Ver todos os campeões</a></h3>
+                <h3 style="margin-top: 60px; margin-bottom: -50px" class="text-center text-uppercase text-white"><a href="<?php echo base_url()?>Campeoes" style="color:#0f3b97" href="#"> Ver todos os campeões</a></h3>
             </div>
         </div>
     </div>

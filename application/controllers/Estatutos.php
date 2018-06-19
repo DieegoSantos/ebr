@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Inscricoes extends MY_Controller {
+class Estatutos extends MY_Controller {
 
     public function index() {
         $this->load->view('estatutos');
