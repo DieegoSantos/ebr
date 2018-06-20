@@ -15,11 +15,11 @@ class Login extends CI_Controller {
 		$strEmail = $this->input->post('EMAIL');
 		$strSenha = $this->input->post('SENHA');
 		
-		$objUsuario = $this->Usuarios_Model->getUsers($strEmail,$strSenha);
+		$objUsuario = $this->Usuarios_Model->getUsers($strEmail,md5($strSenha));
 
 		if($objUsuario) {
 			$this->session->set_userdata('usuarioLogado',array('email' => $objUsuario['email'], 'nome' => $objUsuario['nome'], 'perfil' => $objUsuario['id_perfil']));
-			redirect(base_url());
+			redirect(base_url() . 'Admin/listarJogador');
 		} else {
 			$this->session->sess_destroy();
 			$arrDados['error'] = 'Usuário/Login Inválido(s)';
@@ -30,6 +30,6 @@ class Login extends CI_Controller {
 	/* Sair da sessão */
 	public function logout() {
 		$this->session->unset_userdata("usuarioLogado");
-		redirect(base_url());	
+		redirect(base_url() . 'admin');
 	}
 }

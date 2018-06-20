@@ -20,7 +20,14 @@ class Welcome extends MY_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+	    $arrDados = array();
+	    $arrDados['planos'] = $this->getPlanos();
+		$this->load->view('welcome_message', $arrDados);
 		$this->load->view('footer');
 	}
+
+	public function getPlanos() {
+        $this->load->model('GetPlanos_Model');
+        return $this->GetPlanos_Model->getListPlanos();
+    }
 }

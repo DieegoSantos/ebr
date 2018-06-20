@@ -17,6 +17,7 @@
     <script src="<?php echo base_url() ?>js/jquery.js"></script>
     <script src="<?php echo base_url() ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url() ?>js/jquery.mask.js"></script>
+    <script src="<?php echo base_url() ?>js/nicEdit.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -30,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo base_url() ?>">LIGA EBR - ADMIN</a>
+            <a class="navbar-brand" href="<?php echo base_url() . 'Admin' ?>">LIGA EBR - ADMIN</a>
         </div>
         <!-- Top Menu -->
         <ul class="nav navbar-right top-nav">
@@ -47,28 +48,28 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Cadastrar Jogador</a>
+                    <a href="<?php echo base_url('admin/listarJogador') ?>"><i class="fa fa-fw fa-user"></i> Cadastrar Jogador</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-money"></i> Cadastrar Planos</a>
+                    <a href="<?php echo base_url('admin/listarPlanos') ?>"><i class="fa fa-money"></i> Cadastrar Planos</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-gamepad"></i> Cadastrar Campeões</a>
+                    <a href="<?php echo base_url('admin/listarCampeoes') ?>"><i class="fa fa-fw fa-gamepad"></i> Cadastrar Campeões</a>
                 </li>
                 <li>
                     <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Conteudos <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="demo" class="collapse">
                         <li>
-                            <a href="#">Cronograma</a>
+                            <a href="<?php echo base_url('admin/addCronograma') ?>">Cronograma</a>
                         </li>
                         <li>
-                            <a href="#">Inscrições</a>
+                            <a href="<?php echo base_url('admin/addInscricoes') ?>">Inscrições</a>
                         </li>
                         <li>
-                            <a href="#">Campeões</a>
+                            <a href="<?php echo base_url('admin/addCampeoes') ?>">Campeões</a>
                         </li>
                         <li>
-                            <a href="#">Estátutos</a>
+                            <a href="<?php echo base_url('admin/addEstatutos') ?>">Estátutos</a>
                         </li>
                     </ul>
                 </li>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="page-wrapper">
         <div class="container-fluid">
             <div class="row">
-                <h3 class="page-header">Alunos Cadastrados</h3>   
+                <h3 class="page-header">Jogadores Cadastrados</h3>
                 <?php if($this->session->flashdata('sucesso')) : ?>
                     <div class="alert alert-success">
                      <?php echo $this->session->flashdata('sucesso');?>
@@ -24,11 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Aluno</th>
-                                            <th>Data de Nascimento</th>
-                                            <th>Telefone</th>
-                                            <th>RG</th>
-                                            <th>CPF</th>
+                                            <th>Jogador</th>
+                                            <th>PSN</th>
+                                            <th>Status</th>
                                             <th>Ações</th>
                                         </tr>
                                     </thead>
@@ -38,18 +36,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     ?>
                                         <tr>
                                             <td><?php echo $objResult->nome ?></td>
-                                            <td><?php echo $objResult->data_nascimento ?></td>
-                                            <td><?php echo $objResult->telefone ?></td>
-                                            <td><?php echo $objResult->rg ?></td>
-                                            <td><?php echo $objResult->cpf ?></td>
+                                            <td><?php echo $objResult->psn ?></td>
+                                            <td><?php echo $objResult->status ?></td>
                                             <td>
-                                                <a href="<?php echo base_url('index.php/Alunos/editAluno?idAluno='.$objResult->id_aluno) ?>" class="btn btn-warning">Editar</a>
-                                                 <a href="#" class="btn btn-danger" onclick="confirm_del('<?php echo $objResult->nome ?>', <?php echo $objResult->id_aluno ?>)">Remover</a>                         
+                                                <a href="<?php echo base_url('Admin/editarJogador?id='.$objResult->id) ?>" class="btn btn-warning">Editar</a>
+                                                 <a href="#" class="btn btn-danger" onclick="confirm_del('<?php echo $objResult->nome ?>', <?php echo $objResult->id ?>)">Remover</a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
                                     <tr>
-                                        <td colspan="5"><a href="<?php echo base_url('index.php/Alunos/addAluno') ?>" class="btn btn-primary">Cadastrar Aluno</a></td>
+                                        <td colspan="5"><a href="<?php echo base_url('Admin/addJogador') ?>" class="btn btn-primary">Cadastrar</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -68,10 +64,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </body>
 </html>
 <script type="text/javascript">
-    function confirm_del(nome, id_aluno) {
-        var result = confirm("Tem certeza que deseja remover o aluno " + nome + " ?");
+    function confirm_del(nome, id) {
+        var result = confirm("Tem certeza que deseja remover o Jogador " + nome + " ?");
         if (result) {
-            window.location = '<?php echo base_url('index.php/Alunos/deleteAluno?idAluno=')?>'+id_aluno;
+            window.location = '<?php echo base_url('Admin/deletaJogador?id=')?>'+id;
         }
     }
 </script>

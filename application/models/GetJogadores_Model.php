@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class GetAlunos_Model extends CI_Model {
+class GetJogadores_Model extends CI_Model {
 
 	public function getTable() {
-		return 'alunos';
+		return 'jogadores';
 	}
 
-	public function getListAlunos(array $arrWhere = array()) {
+	public function getListJogadores(array $arrWhere = array()) {
 
 		if($arrWhere) {
 			$arrWhereAux = array();

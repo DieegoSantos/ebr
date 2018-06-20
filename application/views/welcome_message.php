@@ -13,16 +13,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h2 class="text-center text-uppercase text-white">Inscrições</h2>
         <hr class="star-light mb-5">
         <div class="row">
-            <?php for($i=0; $i <=2; $i++): ?>
-            <div class="col-lg-4 ml-auto">
-                <div class="conteudoPagamento">
-                    <p>Valor do Plano:<strong>R$ 20,00</strong></p>
-                    <p>K'S: <strong>20K</strong></p>
-                    <p>Bônus Pagamento Antecipado: <strong>+ 5K</strong></p>
-                    <p><a href="http://pag.ae/bcvKF43" target="_blank">Clique aqui para efetuar o pagamento</a></p>
-                </div>
-            </div>
-            <?php endfor; ?>
+            <?php $cont = 0; ?>
+            <?php foreach($planos as $plano): ?>
+                <?php if($cont<=2): ?>
+                    <div class="col-lg-4 ml-auto">
+                        <div class="conteudoPagamento">
+                            <p><strong><?php echo $plano->nome ?></strong></p>
+                            <p>Valor do Plano: <strong>R$<?php echo str_replace('.', ',', $plano->valor) ?></strong></p>
+                            <p>Bônus Pagamento Antecipado: <strong><?php echo $plano->bonus ?></strong></p>
+                            <p><a href="<?php echo $plano->link ?>" target="_blank">Clique aqui para efetuar o pagamento</a></p>
+                        </div>
+                    </div>
+                <?php endif;?>
+            <?php $cont++; ?>
+            <?php endforeach; ?>
         </div>
         <div class="row">
             <div class="col-lg-12">

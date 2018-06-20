@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="CARTOLA UEFA LEAGUE - ADMIN">
     <meta name="author" content="Diego Santos">
-    <title>PORTABILIS</title>
+    <title>Liga E-Brasileirão</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('css/bootstrap.min.css')?>" rel="stylesheet">
     <!-- Custom CSS -->
@@ -46,15 +46,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<?php endif; ?>
 						<form class="form-signin" method="POST" action="<?php echo base_url('index.php/Login/getAutentication');?>">
 					    	<h2 class="form-signin-heading">PAINEL ADMINSTRATIVO</h2>
+                            <img src="/img/logo.jpeg" width="550" />
+                            <br>
+                            <br>
 					        <label for="inputEmail" class="sr-only">Email</label>
-					        <input type="email" name="EMAIL" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-					        <label for="inputPassword" class="sr-only">Senha</label>
+					        <input type="text" name="EMAIL" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+					        <br><label for="inputPassword" class="sr-only">Senha</label>
 					        <input type="password" name="SENHA" id="inputPassword" class="form-control" placeholder="Senha" required>
 					        <!--div class="checkbox">
 					        	<label>
 					        		<input type="checkbox" value="remember-me"> Esqueci a senha
 					        	</label>
 					        </div-->
+                            <br><br>
 					        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 					    </form>
 				    </div>

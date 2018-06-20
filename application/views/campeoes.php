@@ -10,15 +10,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!-- Cronograma Section -->
 <section class="mb-0" id="inscricoes">
     <div class="container">
-        <h2 class="text-center text-uppercase">Todos os Campeões</h2>
+        <h2 class="text-center text-uppercase"><?php echo $titulo ?></h2>
         <div class="row" style="margin-top: 50px">
-            <?php for($i=0; $i <=0; $i++): ?>
-                <div class="col-lg-12 ml-auto">
-                    <div class="container">
-                        <p>Campeões</p>
-                    </div>
+            <div class="col-lg-12 ml-auto">
+                <div class="container">
+                    <?php echo $texto ?>
                 </div>
-            <?php endfor; ?>
+            </div>
         </div>
 </section>
 
