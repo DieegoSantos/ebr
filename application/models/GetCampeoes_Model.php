@@ -17,6 +17,7 @@ class GetCampeoes_Model extends CI_Model {
 			}
 		}
 
+		$this->db->order_by('id', 'DESC');
 		$strSQL = $this->db->get($this->getTable());
 
 		return $strSQL->result(); 

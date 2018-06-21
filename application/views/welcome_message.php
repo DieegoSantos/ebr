@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p><strong><?php echo $plano->nome ?></strong></p>
                             <p>Valor do Plano: <strong>R$<?php echo str_replace('.', ',', $plano->valor) ?></strong></p>
                             <p>Bônus Pagamento Antecipado: <strong><?php echo $plano->bonus ?></strong></p>
-                            <p><a href="<?php echo $plano->link ?>" target="_blank">Clique aqui para efetuar o pagamento</a></p>
+                            <p style="text-align: center"><a class="btn btn-info" href="<?php echo $plano->link ?>" target="_blank">FAZER INSCRIÇÃO</a></p>
                         </div>
                     </div>
                 <?php endif;?>
@@ -41,7 +41,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <h2 class="text-center text-uppercase text-secondary mb-0">Últmos Campeões</h2>
         <hr class="star-dark mb-5">
         <div class="row">
-            <?php for($i=0; $i <=2; $i++): ?>
+            <?php $cont = 0; ?>
+            <?php foreach($campeoes as $campeao): ?>
+                <?php if($cont <=2): ?>
                 <div class="col-lg-4 ml-auto">
                     <div class="conteudoCampeoes">
                         <div class="row">
@@ -49,14 +51,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <img src="http://www.giftt.com.br/img/admin/usuarios.png" width="100%" />
                         </div>
                         <div class="col-md-8">
-                            <p>Nome:<strong>Nome do Campeão</strong></p>
-                            <p>PSN: <strong>psn_campeão</strong></p>
-                            <p>Campeonato: <strong>Campeonato Vencido</strong></p>
+                            <p><strong><?php echo $campeao->nome_jogador ?></strong></p>
+                            <p><?php echo $campeao->temporada ?>ª Temporada<br><?php echo $campeao->torneio ?></p>
                         </div>
                         </div>
                     </div>
                 </div>
-            <?php endfor; ?>
+                <?php endif; ?>
+                <?php $cont++ ?>
+            <?php endforeach; ?>
         </div>
         <div class="row">
             <div class="col-lg-12">

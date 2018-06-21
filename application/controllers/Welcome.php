@@ -22,6 +22,8 @@ class Welcome extends MY_Controller {
 	{
 	    $arrDados = array();
 	    $arrDados['planos'] = $this->getPlanos();
+	    $arrDados['campeoes'] = $this->getCampeoes();
+
 		$this->load->view('welcome_message', $arrDados);
 		$this->load->view('footer');
 	}
@@ -29,5 +31,10 @@ class Welcome extends MY_Controller {
 	public function getPlanos() {
         $this->load->model('GetPlanos_Model');
         return $this->GetPlanos_Model->getListPlanos();
+    }
+
+    public function getCampeoes() {
+	    $this->load->model('GetCampeoes_Model');
+	    return $this->GetCampeoes_Model->getListCampeoes();
     }
 }

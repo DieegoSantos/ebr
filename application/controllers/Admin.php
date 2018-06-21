@@ -233,11 +233,11 @@ class Admin extends CI_Controller {
         if($id > 0) {
             $this->db->where("id", $id);
             $this->db->update('campeoes', $arrDados);
-            $this->session->set_flashdata('sucesso','Plano atualizado com sucesso.');
+            $this->session->set_flashdata('sucesso','Campeão atualizado com sucesso.');
 
         } else {
             $this->db->insert('campeoes', $arrDados);
-            $this->session->set_flashdata('sucesso','Plano cadastrado com sucesso.');
+            $this->session->set_flashdata('sucesso','Campeão cadastrado com sucesso.');
         }
 
         redirect(base_url('Admin/listarCampeoes'));
