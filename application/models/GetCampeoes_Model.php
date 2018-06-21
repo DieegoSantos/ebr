@@ -17,10 +17,13 @@ class GetCampeoes_Model extends CI_Model {
 			}
 		}
 
-		$this->db->order_by('id', 'DESC');
-		$strSQL = $this->db->get($this->getTable());
+		$this->db->order_by('cp.id', 'DESC');
 
-		return $strSQL->result(); 
+        $sql = $this->db->select("jg.nome, jg.psn, jg.image, cp.torneio, cp.temporada")
+            ->join("jogadores jg", "cp.id_jogador = jg.id")
+            ->get("campeoes cp")->result();
+
+		return $sql;
 	}
 	
 }

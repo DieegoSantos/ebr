@@ -15,6 +15,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					    	<label for="psn">PSN(*)</label>
 					    	<input id="psn" required autofocus name="psn" type="text" class="form-control"  value="<?php echo isset($psn)? $psn : '' ?>" />
 						</fieldset>
+                        <fieldset class="form-group">
+                            <label for="imagem">Foto</label>
+                            <input id="imagem" autofocus name="imagem" type="file" class="form-control"  value="<?php echo isset($psn)? $psn : '' ?>" />
+                        </fieldset>
 						<fieldset class="form-group">
 					    	<label for="tel">Status(*)</label>
                             <select class="form-control" name="status">

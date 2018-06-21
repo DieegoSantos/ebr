@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <p><strong><?php echo $plano->nome ?></strong></p>
                             <p>Valor do Plano: <strong>R$<?php echo str_replace('.', ',', $plano->valor) ?></strong></p>
                             <p>Bônus Pagamento Antecipado: <strong><?php echo $plano->bonus ?></strong></p>
-                            <p style="text-align: center"><a class="btn btn-info" href="<?php echo $plano->link ?>" target="_blank">FAZER INSCRIÇÃO</a></p>
+                            <p style="text-align: center"><a class="btn btn-info" href="http://<?php echo $plano->link ?>" target="_blank">FAZER INSCRIÇÃO</a></p>
                         </div>
                     </div>
                 <?php endif;?>
@@ -48,10 +48,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="conteudoCampeoes">
                         <div class="row">
                         <div class="col-md-4">
-                            <img src="http://www.giftt.com.br/img/admin/usuarios.png" width="100%" />
+                            <img style="border-radius: 50px; border:1px solid #11562d" src="<?php echo $campeao->image ?>" width="100%" />
                         </div>
                         <div class="col-md-8">
-                            <p><strong><?php echo $campeao->nome_jogador ?></strong></p>
+                            <p><strong><?php echo $campeao->nome ?></strong><br><?php echo $campeao->psn ?></p>
                             <p><?php echo $campeao->temporada ?>ª Temporada<br><?php echo $campeao->torneio ?></p>
                         </div>
                         </div>

@@ -35,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 foreach ($objDados as $objResult):
                                     ?>
                                     <tr>
-                                        <td><?php echo $objResult->nome_jogador ?></td>
+                                        <td><?php echo $objResult->nome ?></td>
                                         <td><?php echo $objResult->torneio ?></td>
                                         <td><?php echo $objResult->temporada ?></td>
                                     </tr>

@@ -75,11 +75,25 @@ class Admin extends CI_Controller {
         $intStatus = $this->input->post('status');
         $id = $this->input->post('id');
 
+        $uploaddir = FCPATH . '/upload/';
+        $extensao = pathinfo($_FILES['imagem']['name']);
+        $extensao = ".".$extensao['extension'];
+        $uploadfileName = base_url() . '/upload/' . $strPSN.$extensao;
+        $uploadfile= $uploaddir  . $strPSN.$extensao;
+
+        echo '<pre>';
+        if (move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile)) {
+            echo "Arquivo válido e enviado com sucesso.\n";
+        } else {
+            echo "Possível ataque de upload de arquivo!\n";
+        }
+
 
         $arrDados = array();
         $arrDados['nome'] = $strNome;
         $arrDados['psn'] = $strPSN;
         $arrDados['status'] = $intStatus;
+        $arrDados['image'] = $uploadfileName;
         if($id > 0) {
             $this->db->where("id", $id);
             $this->db->update('jogadores', $arrDados);
@@ -220,14 +234,14 @@ class Admin extends CI_Controller {
         if(!$this->verificaSessao())
             redirect(base_url('Login'));
 
-        $strNome = $this->input->post('nome_jogador');
+        $idJogador = $this->input->post('id_jogador');
         $strTorneio = $this->input->post('torneio');
         $strTemporada = $this->input->post('temporada');
         $id = $this->input->post('id');
 
 
         $arrDados = array();
-        $arrDados['nome_jogador'] = $strNome;
+        $arrDados['id_jogador'] = $idJogador;
         $arrDados['torneio'] = $strTorneio;
         $arrDados['temporada'] = $strTemporada;
         if($id > 0) {

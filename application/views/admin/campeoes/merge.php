@@ -9,10 +9,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<form method="post" action="<?php echo base_url('admin/saveCampeao') ?>" enctype="multipart/form-data">
                         <fieldset class="form-group">
                             <label for="tel">Jogador(*)</label>
-                            <select class="form-control" required name="nome_jogador">
+                            <select class="form-control" required name="id_jogador">
                                 <option value=""><< Selecione>></option>
                                 <?php foreach ($jogador as $dados): ?>
-                                    <option value="<?php echo $dados->nome ?> - <?php echo $dados->psn ?>"><?php echo $dados->nome ?> - <?php echo $dados->psn ?></option>
+                                    <option value="<?php echo $dados->id ?>"><?php echo $dados->nome ?> - <?php echo $dados->psn ?></option>
                                 <?php endforeach; ?>
                             </select>
                             <input type="hidden" name="id" value="<?php echo isset($id)? $id : '0' ?>">
